@@ -78,23 +78,26 @@ tab_contents = {
     </div>
     """,
     "Utilização do Prophet": """
-<div class="custom-container">
-    <p>A biblioteca Prophet, desenvolvida pelo Facebook, é uma ferramenta popular e poderosa para previsão de séries temporais. 
-    Ela foi projetada para simplificar o processo de criação de modelos de previsão, oferecendo aos usuários uma maneira fácil de gerar previsões precisas e de alta qualidade, mesmo sem um profundo conhecimento em séries temporais ou estatística avançada.</p>
+    <div class="custom-container">
+        <p>A biblioteca Prophet, desenvolvida pelo Facebook, é uma ferramenta popular e poderosa para previsão de séries temporais. 
+        Ela foi projetada para simplificar o processo de criação de modelos de previsão, oferecendo aos usuários uma maneira fácil de gerar previsões precisas e de alta qualidade, mesmo sem um profundo conhecimento em séries temporais ou estatística avançada.</p>
 
-    <p>Aqui estão alguns pontos-chave sobre o Prophet:</p>
+        <p>Aqui estão alguns pontos-chave sobre o Prophet:</p>
 
-    <br>
-        <p><strong>Facilidade de Uso:</strong> O Prophet foi desenvolvido para ser acessível e fácil de usar, permitindo que usuários, mesmo sem experiência avançada em séries temporais, possam construir modelos de previsão.</p>  
-        <p><strong>Componentes Aditivos:</strong> O modelo do Prophet é baseado em componentes aditivos, onde são consideradas tendências anuais, sazonais e efeitos de feriados, além de componentes de regressão.</p>  
-        <p><strong>Tratamento de Dados Ausentes e Outliers:</strong> O Prophet lida bem com dados ausentes e outliers, reduzindo a necessidade de pré-processamento extensivo dos dados antes da modelagem.<p>  
-        <p><strong>Flexibilidade:</strong> Permite a inclusão de dados adicionais, como feriados e eventos especiais, para melhorar a precisão das previsões.</p>  
-        <p><strong>Estimativa Automática de Intervalos de Incerteza:</strong> O Prophet fornece intervalos de incerteza para as previsões, o que é essencial para compreender a confiabilidade dos resultados.</p>  
-        <p><strong>Implementação em Python e R:</strong> Está disponível tanto para Python quanto para R, ampliando sua acessibilidade para diferentes comunidades de usuários.</p>  
-        <p><strong>Comunidade Ativa e Documentação Detalhada:</strong> A biblioteca possui uma comunidade ativa de usuários e desenvolvedores, além de uma documentação detalhada e exemplos práticos que ajudam na aprendizagem e na solução de problemas.</p>
-    
-</div>
-""",
+        - **Facilidade de Uso:** O Prophet foi desenvolvido para ser acessível e fácil de usar, permitindo que usuários, mesmo sem experiência avançada em séries temporais, possam construir modelos de previsão.
+        - **Componentes Aditivos:** O modelo do Prophet é baseado em componentes aditivos, onde são consideradas tendências anuais, sazonais e efeitos de feriados, além de componentes de regressão.
+        - **Tratamento de Dados Ausentes e Outliers:** O Prophet lida bem com dados ausentes e outliers, reduzindo a necessidade de pré-processamento extensivo dos dados antes da modelagem.
+        - **Flexibilidade:** Permite a inclusão de dados adicionais, como feriados e eventos especiais, para melhorar a precisão das previsões.
+        - **Estimativa Automática de Intervalos de Incerteza:** O Prophet fornece intervalos de incerteza para as previsões, o que é essencial para compreender a confiabilidade dos resultados.
+        - **Implementação em Python e R:** Está disponível tanto para Python quanto para R, ampliando sua acessibilidade para diferentes comunidades de usuários.
+        - **Comunidade Ativa e Documentação Detalhada:** A biblioteca possui uma comunidade ativa de usuários e desenvolvedores, além de uma documentação detalhada e exemplos práticos que ajudam na aprendizagem e na solução de problemas.
+    </div>
+    <style>
+        .custom-container p {
+            text-align: justify; /* Alinha o texto à justificação */
+        }
+    </style>
+    """,
     "Sobre o Autor": """
     <div class="custom-container">
         Criado por Henrique José Itzcovici.
