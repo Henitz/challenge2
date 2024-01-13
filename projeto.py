@@ -81,14 +81,16 @@ tab_contents = {
     <div class="custom-container">
         <p>A biblioteca Prophet, desenvolvida pelo Facebook, é uma ferramenta popular e poderosa para previsão de séries temporais. 
         Ela foi projetada para simplificar o processo de criação de modelos de previsão, oferecendo aos usuários uma maneira fácil de gerar previsões precisas e de alta qualidade, mesmo sem um profundo conhecimento em séries temporais ou estatística avançada.</p>
-        <p>Aqui estão alguns pontos-chave sobre o Prophet:</p>
-        <p>- Facilidade de Uso: O Prophet foi desenvolvido para ser acessível e fácil de usar, permitindo que usuários, mesmo sem experiência avançada em séries temporais, possam construir modelos de previsão.</p>
-        <p>- Componentes Aditivos: O modelo do Prophet é baseado em componentes aditivos, onde são consideradas tendências anuais, sazonais e efeitos de feriados, além de componentes de regressão.</p>
-        <p>- Tratamento de Dados Ausentes e Outliers: O Prophet lida bem com dados ausentes e outliers, reduzindo a necessidade de pré-processamento extensivo dos dados antes da modelagem.</p>
-        <p>- Flexibilidade:** Permite a inclusão de dados adicionais, como feriados e eventos especiais, para melhorar a precisão das previsões.</p>
-        <p>- Estimativa Automática de Intervalos de Incerteza: O Prophet fornece intervalos de incerteza para as previsões, o que é essencial para compreender a confiabilidade dos resultados.</p>
-        <p>- Implementação em Python e R: Está disponível tanto para Python quanto para R, ampliando sua acessibilidade para diferentes comunidades de usuários.</p>
-        <p>- Comunidade Ativa e Documentação Detalhada: A biblioteca possui uma comunidade ativa de usuários e desenvolvedores, além de uma documentação detalhada e exemplos práticos que ajudam na aprendizagem e na solução de problemas.</p>
+        <ol>
+            <li>Aqui estão alguns pontos-chave sobre o Prophet:</p>
+            <li>- Facilidade de Uso: O Prophet foi desenvolvido para ser acessível e fácil de usar, permitindo que usuários, mesmo sem experiência avançada em séries temporais, possam construir modelos de previsão.</li>
+            <li>- Componentes Aditivos: O modelo do Prophet é baseado em componentes aditivos, onde são consideradas tendências anuais, sazonais e efeitos de feriados, além de componentes de regressão.</li>
+            <li>- Tratamento de Dados Ausentes e Outliers: O Prophet lida bem com dados ausentes e outliers, reduzindo a necessidade de pré-processamento extensivo dos dados antes da modelagem.</li>
+            <li>- Flexibilidade:** Permite a inclusão de dados adicionais, como feriados e eventos especiais, para melhorar a precisão das previsões.</li>
+            <li>- Estimativa Automática de Intervalos de Incerteza: O Prophet fornece intervalos de incerteza para as previsões, o que é essencial para compreender a confiabilidade dos resultados.</li>
+            <li>- Implementação em Python e R: Está disponível tanto para Python quanto para R, ampliando sua acessibilidade para diferentes comunidades de usuários.</li>
+            <li>- Comunidade Ativa e Documentação Detalhada: A biblioteca possui uma comunidade ativa de usuários e desenvolvedores, além de uma documentação detalhada e exemplos práticos que ajudam na aprendizagem e na solução de problemas.</li>
+        </ol>
     </div>
     <style>
         .custom-container p {
