@@ -1,6 +1,8 @@
 # import plotly.express as px
-import os
+
 import warnings
+import os
+import sys
 
 zip_file_path = "app.zip"
 
@@ -17,7 +19,6 @@ from prophet.diagnostics import performance_metrics
 
 import model
 import prevel_model
-from app import pasta_do_zip
 
 # Ignorar os FutureWarnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -126,6 +127,13 @@ st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
 ### Passo 1: Importar dados
 """
 df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
+
+# Adiciona o diretório que contém app.py ao PATH para importações relativas
+diretorio_app = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(diretorio_app)
+from app import pasta_do_zip  # Importa a variável pasta_do_zip de app.py
+
+import streamlit as st
 
 uploaded_file = st.file_uploader(
     'Importar o dados da série csv aqui, posteriormente as colunas serão nomeadas ds e y. A entrada de dados para o Prophet sempre deve ser com as colunas: ds e y. O ds(datestamp) coluna deve ter o formato esperado pelo Pandas, idealmente YYYY-MM-DD para data ou YYYY-MM-DD HH:MM:SS para timestamp. A coluna y deve ser numérica e representa a medida que queremos estimar',
