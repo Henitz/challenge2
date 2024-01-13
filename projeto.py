@@ -1,4 +1,5 @@
 # import plotly.express as px
+import os
 import warnings
 
 zip_file_path = "app.zip"
@@ -16,6 +17,7 @@ from prophet.diagnostics import performance_metrics
 
 import model
 import prevel_model
+from app import pasta_do_zip
 
 # Ignorar os FutureWarnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -127,7 +129,9 @@ df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
 
 uploaded_file = st.file_uploader(
     'Importar o dados da série csv aqui, posteriormente as colunas serão nomeadas ds e y. A entrada de dados para o Prophet sempre deve ser com as colunas: ds e y. O ds(datestamp) coluna deve ter o formato esperado pelo Pandas, idealmente YYYY-MM-DD para data ou YYYY-MM-DD HH:MM:SS para timestamp. A coluna y deve ser numérica e representa a medida que queremos estimar',
-    type='csv')
+    type='csv',
+    key=os.path.basename(pasta_do_zip) if os.path.exists(pasta_do_zip) else None
+)
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
