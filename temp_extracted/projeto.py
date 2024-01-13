@@ -74,8 +74,8 @@ selected_tab = st.sidebar.radio("Escolha uma guia:", tabs)
 tab_contents = {
     "Visão Geral": """
     <div class="custom-container">
-       <p> Este data app usa a Biblioteca open-source Prophet para automaticamente gerar valores futuros de previsão de um dataset importado. 
-        Você poderá visualizar as projeções do índice Bovespa para o período de 01/01/2024 a 31/01/2024 😵.</p>
+        Este data app usa a Biblioteca open-source Prophet para automaticamente gerar valores futuros de previsão de um dataset importado. 
+        Você poderá visualizar as projeções do índice Bovespa para o período de 01/01/2024 a 31/01/2024 😵.
     </div>
     <style>
         .custom-container p {
@@ -85,8 +85,8 @@ tab_contents = {
     """,
     "Pontos-chave": """
     <div class="custom-container">
-      <p>O Prophet tem sido amplamente utilizado em diversas áreas, como previsão de vendas, demanda de produtos, análise financeira, previsão climática e muito mais, devido à sua capacidade de gerar previsões precisas e à sua facilidade de uso. 
-        É importante notar que, embora seja uma ferramenta poderosa, a escolha entre modelos depende do contexto específico do problema e da natureza dos dados.</p>
+        O Prophet tem sido amplamente utilizado em diversas áreas, como previsão de vendas, demanda de produtos, análise financeira, previsão climática e muito mais, devido à sua capacidade de gerar previsões precisas e à sua facilidade de uso. 
+        É importante notar que, embora seja uma ferramenta poderosa, a escolha entre modelos depende do contexto específico do problema e da natureza dos dados.
     </div>
     <style>
         .custom-container p {
