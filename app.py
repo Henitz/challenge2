@@ -58,12 +58,15 @@ if zip_content:
         st.write(f"Executando {projeto_path}")
         os.system(f"streamlit run {projeto_path}")
 
+        # Limpando o diretório temporário após a execução do Streamlit app
+        clean_temp_dir(temp_dir)
+
         # Obtém o diretório de trabalho atual (onde o Python está sendo executado)
-        #diretorio_atual = os.getcwd()
+        # diretorio_atual = os.getcwd()
 
         # Caminho para a pasta onde o arquivo ZIP será extraído
-        #pasta_do_zip = os.path.join(diretorio_atual, "temp_extracted")  # Altere conforme necessário
-        #st.write(pasta_do_zip)
+        # pasta_do_zip = os.path.join(diretorio_atual, "temp_extracted")  # Altere conforme necessário
+        # st.write(pasta_do_zip)
     except Exception as e:
         st.error(f"Erro ao extrair o arquivo ZIP: {e}")
 
