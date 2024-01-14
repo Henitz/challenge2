@@ -153,7 +153,7 @@ upload_message = (
     "A coluna y deve ser numérica e representa a medida que queremos estimar."
 )
 
-justify_text = TextJustify.justify_text(upload_message, w="80", align="justify", fill=" ")
+justify_text = TextJustify.justify_text(upload_message,w=80, align="justify", fill=" ")
 
 # Use str() to convert the cache key to a string
 key_for_cache = str(os.path.basename(pasta_do_zip)) if os.path.exists(pasta_do_zip) else None
