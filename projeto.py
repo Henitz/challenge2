@@ -1,5 +1,5 @@
 # import plotly.express as px
-
+import textwrap
 import warnings
 import os
 import sys
@@ -142,12 +142,13 @@ pasta_do_zip = os.path.join("c:", "temp_extracted")
 # ou o caminho correto para a sua pasta
 
 # Original message in Portuguese formatted with HTML
-upload_message = (
+upload_message = textwrap.fill(
     "Importe os dados da série em formato CSV aqui. Posteriormente, as colunas serão nomeadas ds e y. "
     "A entrada de dados para o Prophet sempre deve ser com as colunas: ds e y. "
     "A coluna ds (datestamp) deve ter o formato esperado pelo Pandas, idealmente "
-    "YYYY-MM-DD para data ou  YYYY-MM-DD HH:MM:SS para timestamp."
-    "A coluna y deve ser numérica e representa a medida que queremos estimar."
+    "YYYY-MM-DD para data ou YYYY-MM-DD HH:MM:SS para timestamp. "
+    "A coluna y deve ser numérica e representa a medida que queremos estimar.",
+    width=80  # Define a largura máxima das linhas
 )
 
 # Use str() to convert the cache key to a string
