@@ -136,7 +136,10 @@ df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
 import streamlit as st
 
 # Defina a variável pasta_do_zip aqui
-pasta_do_zip = "c:/temp_extracted"  # ou o caminho correto para a sua pasta
+import os
+
+pasta_do_zip = os.path.join("c:", "temp_extracted")
+# ou o caminho correto para a sua pasta
 
 # Original message in Portuguese formatted with HTML
 upload_message = (
