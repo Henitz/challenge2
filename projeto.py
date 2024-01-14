@@ -142,20 +142,24 @@ pasta_do_zip = os.path.join("c:", "temp_extracted")
 # ou o caminho correto para a sua pasta
 
 # Original message in Portuguese formatted with HTML
-upload_message = textwrap.fill(
+from textjustify import TextJustify
+
+upload_message = (
     "Importe os dados da série em formato CSV aqui. Posteriormente, as colunas serão nomeadas ds e y. "
     "A entrada de dados para o Prophet sempre deve ser com as colunas: ds e y. "
     "A coluna ds (datestamp) deve ter o formato esperado pelo Pandas, idealmente "
     "YYYY-MM-DD para data ou YYYY-MM-DD HH:MM:SS para timestamp. "
-    "A coluna y deve ser numérica e representa a medida que queremos estimar.",
-    width=80  # Define a largura máxima das linhas
+    "A coluna y deve ser numérica e representa a medida que queremos estimar."
 )
+
+justifier = TextJustify(upload_message, line_length=80)
+justified_text = justifier.justify()
 
 # Use str() to convert the cache key to a string
 key_for_cache = str(os.path.basename(pasta_do_zip)) if os.path.exists(pasta_do_zip) else None
 
 # File Uploader
-uploaded_file = st.file_uploader(upload_message, type='csv', key=key_for_cache)
+uploaded_file = st.file_uploader(justified_text, type='csv', key=key_for_cache)
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
