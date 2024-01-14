@@ -129,17 +129,14 @@ st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
 df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
 
 # Adiciona o diretório que contém app.py ao PATH para importações relativas
-#diretorio_app = os.path.dirname(os.path.abspath(__file__))
-#sys.path.append(diretorio_app)
-#from app import pasta_do_zip  # Importa a variável pasta_do_zip de app.py
+# diretorio_app = os.path.dirname(os.path.abspath(__file__))
+# sys.path.append(diretorio_app)
+# from app import pasta_do_zip  # Importa a variável pasta_do_zip de app.py
 
 import streamlit as st
 
 # Defina a variável pasta_do_zip aqui
 pasta_do_zip = "c:/temp_extracted"  # ou o caminho correto para a sua pasta
-
-# Assuming you have a directory path stored in 'pasta_do_zip'
-# pasta_do_zip = "temp_extracted"
 
 # Original message in Portuguese formatted with HTML
 upload_message = (
@@ -155,7 +152,6 @@ key_for_cache = str(os.path.basename(pasta_do_zip)) if os.path.exists(pasta_do_z
 
 # File Uploader
 uploaded_file = st.file_uploader(upload_message, type='csv', key=key_for_cache)
-
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
