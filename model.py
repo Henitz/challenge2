@@ -86,6 +86,11 @@ def modelo(df1, data_selecionada, hora_selecionada):
 
     # Verificar se os DataFrames têm o mesmo número de amostras
     # df e forecast são diferentes pois forecast foi levado em conta os feridos e fins de semana
+    st.write("Tamanho dos shape")
+    a = df1.shape[0]
+    b = forecast.shape[0]
+    st.write(f"df1.shape[0]: {a}")
+    st.write(f"forecast.shape[0]: {b}")
     if df1.shape[0] == forecast.shape[0]:
         # Calcular métricas
         mae1 = mean_absolute_error(df1['y'], forecast['yhat'])
