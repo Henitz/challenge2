@@ -109,6 +109,8 @@ st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
 """
 ### Passo 1: Importar dados
 """
+data_selecionada = None
+hora_selecionada = None
 df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
 
 # Adiciona o diretório que contém app.py ao PATH para importações relativas
