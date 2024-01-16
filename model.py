@@ -95,7 +95,7 @@ def modelo(df1, data_selecionada, hora_selecionada):
         st.write(f"MSE: {mse1}")
         st.write(f"RMSE: {rmse1}")
     else:
-        df1.write("Os DataFrames não têm o mesmo número de amostras. Verifique os dados.")
+        st.write("Os DataFrames não têm o mesmo número de amostras. Verifique os dados.")
     # Calculando as previsões do modelo para os dados de teste
     # Calculando novamente forecast para todos os dados, vai ser prossivel calcular as métricas
     forecast = m.predict(df1)
