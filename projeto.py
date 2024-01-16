@@ -155,8 +155,11 @@ upload_message = (
 # Use str() to convert the cache key to a string
 key_for_cache = str(os.path.basename(pasta_do_zip)) if os.path.exists(pasta_do_zip) else None
 
+# Change the current working directory to the desired folder
+os.chdir(pasta_do_zip)
+
 # File Uploader
-uploaded_file = st.file_uploader(upload_message, type='csv', key=key_for_cache, initial_value=pasta_do_zip)
+uploaded_file = st.file_uploader(upload_message, type='csv', key=key_for_cache)
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
