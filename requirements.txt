@@ -82,7 +82,7 @@ SQLAlchemy==2.0.25
 sqlglot==20.8.0
 stack-data==0.6.3
 stanio==0.3.0
-streamlit==1.29.0
+streamlit==1.30.0
 tenacity==8.2.3
 threadpoolctl==3.2.0
 toml==0.10.2
