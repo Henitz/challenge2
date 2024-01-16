@@ -138,11 +138,7 @@ import streamlit as st
 # Defina a variável pasta_do_zip aqui
 import os
 
-pasta_do_zip = os.path.join("c:", "temp_extracted")
-# ou o caminho correto para a sua pasta
-
-# Original message in Portuguese formatted with HTML
-
+pasta_do_zip = "c:/temp_extracted"  # Specify the path directly with a forward slash
 
 upload_message = (
     "Importe os dados da série em formato CSV aqui. Posteriormente, as colunas serão nomeadas ds e y. "
