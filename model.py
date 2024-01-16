@@ -35,10 +35,14 @@ def modelo(df1, data_selecionada, hora_selecionada):
     # df1['is_weekend'] = (df1['ds'].dt.weekday >= 5).astype(int)
     # m.add_regressor('is_weekend')
 
+    # Criando o dataframe para previsão futura
+    # Certifique-se de que a data inicial seja igual à última data em df1
+    data_inicial = df1['ds'].max()
+
     m.fit(df1)
 
-    # Criando o dataframe para previsão futura
-    future = m.make_future_dataframe(periods=365)
+    # Ajuste do período de previsão para que seja igual a df1
+    future = m.make_future_dataframe(periods=0, freq='D')
     # future['is_weekend'] = (future['ds'].dt.weekday >= 5).astype(int)
     forecast = m.predict(future)
 
