@@ -31,8 +31,8 @@ def modelo(df1, data_selecionada, hora_selecionada):
 
     # Adicionando feriados semanais (sábados e domingos)
     # Criar campo 'is_weekend' com 0 e 1 - significando fim de semana
-    df1['is_weekend'] = (df1['ds'].dt.weekday >= 5).astype(int)
-    m.add_regressor('is_weekend')
+    # df1['is_weekend'] = (df1['ds'].dt.weekday >= 5).astype(int)
+    # m.add_regressor('is_weekend')
 
     m.fit(df1)
 
