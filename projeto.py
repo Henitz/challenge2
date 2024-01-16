@@ -1,12 +1,8 @@
-# import plotly.express as px
-import textwrap
 import warnings
 import os
 import sys
 
 zip_file_path = "app.zip"
-
-# !pip install matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -14,33 +10,20 @@ import pandas as pd
 # !pip install statsmodels
 # from statsmodels.tsa.seasonal import seasonal_decompose
 # from statsmodels.tsa.stattools import acf, pacf
-import streamlit as st
 from prophet.diagnostics import performance_metrics
-
-from model import modelo
-
-from prevel_model import prevendo
+import model
+import prevel_model
 
 # Ignorar os FutureWarnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
-
 # selected_date = '2024-01-25'  # Replace this with the selected date
 # selected_time = pd.Timestamp('00:00:00').time()
-
-
-
-import pandas as pd
-import numpy as np
 from prophet import Prophet
 import plotly.graph_objs as go
 import plotly.express as px
 import streamlit as st
 
 st.title('📈 Projeção do Índice Bovespa')
-
-# Importando bibliotecas
-import streamlit as st
-
 # Estilo para ajustar a largura da área de exibição e justificar o texto
 st.markdown(
     """
@@ -133,11 +116,8 @@ df = pd.DataFrame(columns=['Data'])  # Inicializa um DataFrame vazio
 # sys.path.append(diretorio_app)
 # from app import pasta_do_zip  # Importa a variável pasta_do_zip de app.py
 
-import streamlit as st
 
-# Defina a variável pasta_do_zip aqui
-import os
-
+# Defina a variável pasta_do_zip aqu
 pasta_do_zip = "c:/temp_extracted"  # Specify the path directly with a forward slash
 
 upload_message = (

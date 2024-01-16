@@ -1,12 +1,7 @@
-import pandas as pd
-from prophet import Prophet
-import streamlit as st
-
-
 def prevendo(df2, data1, flag=True):
     from prophet import Prophet
     import pandas as pd
-
+    import streamlit as st
     # Criando o modelo Prophet
     feriados_sp = pd.DataFrame({
         'holiday': 'feriados_sp',
@@ -49,8 +44,3 @@ def prevendo(df2, data1, flag=True):
         return yhat_period
     else:
         return None
-
-
-
-
-

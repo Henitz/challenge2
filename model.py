@@ -4,7 +4,6 @@ import plotly.graph_objs as go
 import streamlit as st
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import pandas as pd
-
 from acuracy import mean_absolute_percentage_error
 
 
