@@ -5,10 +5,15 @@ import streamlit as st
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import pandas as pd
 from acuracy import mean_absolute_percentage_error
-
+from feriados import create_feriados_sp
+import streamlit as st
 
 def modelo(df1, data_selecionada, hora_selecionada):
     # Adicionando feriados nacionais brasileiros
+
+    # Call the function to create the DataFrame with missing dates as holidays
+    feriados_sp_missing = create_feriados_sp(df1)
+
     feriados_sp = pd.DataFrame({
         'holiday': 'feriados_sp',
         'ds': pd.to_datetime(['2024-01-25', '2024-02-25', '2024-03-25', '2024-04-25', '2024-05-25',
@@ -19,7 +24,7 @@ def modelo(df1, data_selecionada, hora_selecionada):
     })
 
     # Criando o modelo Prophet
-    m = Prophet(holidays=feriados_sp)
+    m = Prophet(holidays=feriados_sp_missing)
 
     # Converter 'ds' para o formato de data, se necessário
     df1['ds'] = pd.to_datetime(df1['ds'])
@@ -80,17 +85,17 @@ def modelo(df1, data_selecionada, hora_selecionada):
 
     # Verificar se os DataFrames têm o mesmo número de amostras
     # df e forecast são diferentes pois forecast foi levado em conta os feridos e fins de semana
-    # if df1.shape[0] == forecast.shape[0]:
-    # Calcular métricas
-    #   mae = mean_absolute_error(df1['y'], forecast['yhat'])
-    #  mse = mean_squared_error(df1['y'], forecast['yhat'])
-    #  rmse = np.sqrt(mse)
+    if df1.shape[0] == forecast.shape[0]:
+        # Calcular métricas
+        mae1 = mean_absolute_error(df1['y'], forecast['yhat'])
+        mse1 = mean_squared_error(df1['y'], forecast['yhat'])
+        rmse1 = np.sqrt(mse1)
 
-    # sf.write(f"MAE: {mae}")
-    # sf.write(f"MSE: {mse}")
-    # sf.write(f"RMSE: {rmse}")
-    # else:
-    #   df.write("Os DataFrames não têm o mesmo número de amostras. Verifique os dados.")
+        st.write(f"MAE: {mae1}")
+        st.write(f"MSE: {mse1}")
+        st.write(f"RMSE: {rmse1}")
+    else:
+        df1.write("Os DataFrames não têm o mesmo número de amostras. Verifique os dados.")
     # Calculando as previsões do modelo para os dados de teste
     # Calculando novamente forecast para todos os dados, vai ser prossivel calcular as métricas
     forecast = m.predict(df1)
