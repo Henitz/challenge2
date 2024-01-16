@@ -11,8 +11,8 @@ import pandas as pd
 # from statsmodels.tsa.seasonal import seasonal_decompose
 # from statsmodels.tsa.stattools import acf, pacf
 from prophet.diagnostics import performance_metrics
-import model
-import prevel_model
+from model import modelo
+from prevel_model import prevendo
 
 # Ignorar os FutureWarnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
@@ -183,7 +183,7 @@ if uploaded_file is not None and not df.empty and 'ds' in df.columns:
     """
     ### Passo 2: Modelo
     """
-    model.modelo(df, data_selecionada, hora_selecionada)
+    modelo(df, data_selecionada, hora_selecionada)
     st.markdown(
         """
         <style>
@@ -299,11 +299,11 @@ if uploaded_file is not None and not df.empty and 'ds' in df.columns:
     btn = st.button("Previsão")
 
     if btn:
-        x = prevel_model.prevendo(df, data2, flag)
+        x = prevendo(df, data2, flag)
         if x is None:
             st.write(f"A data {data2} não está disponível nas previsões ou é feriado/final de semana.")
         else:
             rounded_x = round(x, 3)
             st.write(f"Valor previsto para {data2}: {rounded_x}")
     flag = True
-    prevel_model.prevendo(df, data)
+    prevendo(df, data)
