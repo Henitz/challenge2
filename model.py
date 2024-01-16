@@ -8,6 +8,7 @@ from acuracy import mean_absolute_percentage_error
 from feriados import create_feriados_sp
 import streamlit as st
 
+
 def modelo(df1, data_selecionada, hora_selecionada):
     # Adicionando feriados nacionais brasileiros
 
@@ -38,7 +39,7 @@ def modelo(df1, data_selecionada, hora_selecionada):
 
     # Criando o dataframe para previsão futura
     future = m.make_future_dataframe(periods=365)
-    future['is_weekend'] = (future['ds'].dt.weekday >= 5).astype(int)
+    # future['is_weekend'] = (future['ds'].dt.weekday >= 5).astype(int)
     forecast = m.predict(future)
 
     # Conversão para arrays para uso em plotagem
