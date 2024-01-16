@@ -86,6 +86,8 @@ def modelo(df1, data_selecionada, hora_selecionada):
 
     # Verificar se os DataFrames têm o mesmo número de amostras
     # df e forecast são diferentes pois forecast foi levado em conta os feridos e fins de semana
+    st.write(f"Duplicatas em df1: { df1[df1.duplicated()]}")
+    st.write(f"Duplicatas em forecast: {forecast[forecast.duplicated()]}")
     st.write("Tamanho dos shape")
     a = df1.shape[0]
     b = forecast.shape[0]
