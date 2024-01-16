@@ -95,39 +95,40 @@ def modelo(df1, data_selecionada, hora_selecionada):
     st.write(f"Número de duplicatas em df1: {num_duplicatas_df1}")
 
     # Verificar duplicatas no DataFrame forecast
-    num_duplicatas_forecast = forecast[forecast.duplicated()].shape[0]
-    st.write(f"Número de duplicatas em forecast: {num_duplicatas_forecast}")
-    st.write("Tamanho dos shape")
-    a = df1.shape[0]
-    b = forecast.shape[0]
-    st.write(f"df1.shape[0]: {a}")
-    st.write(f"forecast.shape[0]: {b}")
+    #num_duplicatas_forecast = forecast[forecast.duplicated()].shape[0]
+    #st.write(f"Número de duplicatas em forecast: {num_duplicatas_forecast}")
+    #st.write("Tamanho dos shape")
+    #a = df1.shape[0]
+    #b = forecast.shape[0]
+    #st.write(f"df1.shape[0]: {a}")
+    #st.write(f"forecast.shape[0]: {b}")
     if df1.shape[0] == forecast.shape[0]:
         # Calcular métricas
         mae1 = mean_absolute_error(df1['y'], forecast['yhat'])
+        mae_rounded1 = round(mae1, 2)
         mse1 = mean_squared_error(df1['y'], forecast['yhat'])
+        mse_rounded1 = round(mse1, 2)
         rmse1 = np.sqrt(mse1)
-
-        st.write(f"MAE: {mae1}")
-        st.write(f"MSE: {mse1}")
-        st.write(f"RMSE: {rmse1}")
+        rmse_rounded1 = round(rmse1, 2)
+        st.write(f"MAE: {mae_rounded1}")
+        st.write(f"MSE: {mse_rounded1}")
+        st.write(f"RMSE: {rmse_rounded1}")
     else:
         st.write("Os DataFrames não têm o mesmo número de amostras. Verifique os dados.")
     # Calculando as previsões do modelo para os dados de teste
     # Calculando novamente forecast para todos os dados, vai ser prossivel calcular as métricas
-    forecast = m.predict(df1)
+    # forecast = m.predict(df1)
 
     # Calculando o MAE entre as previsões e os valores reais
-    mae = mean_absolute_error(df1['y'], forecast['yhat'])
-    mae_rounded = round(mae, 2)
+    # mae = mean_absolute_error(df1['y'], forecast['yhat'])
+    #mae_rounded = round(mae, 2)
 
-    st.write(f'MAE: {mae_rounded}')
-    mse = mean_squared_error(df1['y'], forecast['yhat'])
-    mse_rounded = round(mse, 2)
-    rmse = mean_squared_error(df1['y'], forecast['yhat'], squared=False)
-    rmse_rounded = round(rmse, 2)
-    st.write(f'MSE: {mse_rounded}')
-    st.write(f'RMSE: {rmse_rounded}')
+    #st.write(f'MAE: {mae_rounded}')
+    #mse = mean_squared_error(df1['y'], forecast['yhat'])
+    ##rmse = mean_squared_error(df1['y'], forecast['yhat'], squared=False)
+    #rmse_rounded = round(rmse, 2)
+    #st.write(f'MSE: {mse_rounded}')
+    #st.write(f'RMSE: {rmse_rounded}')
 
     # Supondo que 'forecast' seja o resultado da previsão do Prophet
     # y_true é a série real do seu DataFrame, você pode usar df['y'] ou qualquer outra coluna correspondente
